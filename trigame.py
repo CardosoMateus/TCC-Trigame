@@ -187,6 +187,7 @@ class Game:
 
                             caverna.draw()
                             drone.draw()
+                            
                             self.angles.draw()
                             self.display_surf.blit(angle_value_surf, angle_value_rect)
                             self.display_surf.blit(sen_surf, sen_rect)

@@ -44,21 +44,22 @@ class Drone:
     def draw(self):        
         for pos in self.try_pos:
             if pos[1] < 0: 
-                pygame.draw.circle(self.display_surf, 'blue', (pos[0], 0), 5)
-                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'blue', self.pos, (pos[0], 0))
+                pygame.draw.circle(self.display_surf, 'red', (pos[0], 0), 5)
+                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'red', self.pos, (pos[0], 0))
 
             elif pos[1] > 400: 
-                pygame.draw.circle(self.display_surf, 'blue', (pos[0], 400), 5)
-                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'blue', self.pos, (pos[0], 400))
+                pygame.draw.circle(self.display_surf, 'red', (pos[0], 400), 5)
+                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'red', self.pos, (pos[0], 400))
 
             else: 
-                pygame.draw.circle(self.display_surf, 'blue', pos, 5)
-                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'blue', self.pos, pos)
+                pygame.draw.circle(self.display_surf, 'red', pos, 5)
+                if self.pos[0] < pos[0]: pygame.draw.line(self.display_surf, 'red', self.pos, pos)
 
         for i in range(0, self.curr_session + 1):
-            pygame.draw.circle(self.display_surf, 'red', self.past_pos[i], 5)
+            pygame.draw.circle(self.display_surf, 'blue', self.past_pos[i], 5)
+
             if i > 0:
-                pygame.draw.line(self.display_surf, 'red', self.past_pos[i-1], self.past_pos[i], 2)
+                pygame.draw.line(self.display_surf, 'blue', self.past_pos[i-1], self.past_pos[i], 2)
 
         if self.curr_session < self.n_sessions and self.tentativas > 0:
             self.display_surf.blit(self.tentativas_surf, self.tentativas_rect)

@@ -65,20 +65,22 @@ class Caverna:
             pygame.draw.line(self.display_surf,
                              'black',
                              (self.sessions[i].x_pos, self.sessions[i].h_teto),
-                             (self.sessions[i+1].x_pos, self.sessions[i+1].h_teto))
+                             (self.sessions[i+1].x_pos, self.sessions[i+1].h_teto), 2)
             
             pygame.draw.line(self.display_surf,
                              'black',
                              (self.sessions[i].x_pos, self.sessions[i].h_piso),
-                             (self.sessions[i+1].x_pos, self.sessions[i+1].h_piso))
+                             (self.sessions[i+1].x_pos, self.sessions[i+1].h_piso), 2)
         
         for i in self.sessions:
+            pygame.draw.circle(self.display_surf, 'black', (i.x_pos, i.otimo), 3)
+
             pygame.draw.line(self.display_surf,
                              'black',
                              (i.x_pos, i.h_obstaculo_sup),
-                             (i.x_pos, i.h_teto))
+                             (i.x_pos, i.h_teto), 2)
             
             pygame.draw.line(self.display_surf,
                              'black',
                              (i.x_pos, i.h_obstaculo_inf),
-                             (i.x_pos, i.h_piso))
+                             (i.x_pos, i.h_piso), 2)
